@@ -1,0 +1,25 @@
+body {
+  background:black;
+}
+
+.App {
+  align-items: center;
+  background:slateblue;
+  // border:1px solid cyan;
+  color:white;
+  display:flex;
+  flex-direction: column;
+  width:100%;
+  
+  .postCard {
+    border:2px solid white;
+    align-items: center;
+    border-radius:4px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin:8px;
+    padding:8px;
+    width:400px;
+  }
+}
