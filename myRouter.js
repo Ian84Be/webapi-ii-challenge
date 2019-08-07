@@ -43,6 +43,21 @@ router.get('/:id', async (req,res) => {
         res.status(500).json({message:'The post information could not be retrieved.'});
     }
 });
+router.get('/:id/comments', async (req,res) => {
+    try {
+        const post = await Posts.findPostComments(req.params.id);
+        console.log(post)
+        if (post[0]) {
+            res.status(200).json(post);
+        }
+        else {
+            res.status(404).json({error:'The post with the specified ID has no comments/does not exist.'});
+        }
+    }
+    catch (err) {
+        res.status(500).json({message:'The post comment information could not be retrieved.'});
+    }
+});
 
 router.delete('/:id', async (req, res) => {
     try {
